@@ -30,12 +30,6 @@ export class AppComponent {
 
   }
 
-  // menuVar: boolean = false;
-
-  // openMenu() {
-  //   this.menuVar = !this.menuVar;
-  // }
-
   showLinks: boolean = false;
 
   handleShowLinks(): void {

@@ -1,5 +1,7 @@
 <main [ngClass]="mode">
-  <div class="max-w-[1366px] min-h-[100vh] my-0 mx-auto py-0 px-[60px]">
+  <div
+    class="max-w-[1366px] min-h-[100vh] my-0 mx-auto py-0 px-[60px] max-[425px]:px-[30px]"
+  >
     <!-- Navbar -->
     <nav class="h-[100px] flex justify-between items-center">
       <a routerLink="/" routerLinkActive="active" class="font-bold text-[22px]"
@@ -18,10 +20,12 @@
           *ngIf="showLinks"
           (click)="handleShowLinks()"
         >
-          <mat-icon class="text-2xl cursor-pointer">close</mat-icon>
+          <mat-icon class="text-2xl cursor-pointer relative z-50"
+            >close</mat-icon
+          >
         </div>
         <div
-          class="w-[42px] h-[24px] border-[1.5px] border-[#53c28b70] rounded-[30px] flex justify-between items-center p-[2px] relative cursor-pointer"
+          class="w-[42px] h-[24px] border-y-[1.5px] border-y-[#53c28b70] rounded-[30px] flex justify-between items-center p-[2px] relative cursor-pointer"
           (click)="toggleMode()"
         >
           <div class="text-[12px]">🌙</div>
@@ -41,13 +45,48 @@
           <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
         </div>
         <!-- Menu 2 -->
-        <div class="hidden max-[768px]:flex max-[768px]:flex-col max-[768px]:items-center max-[768px]:absolute max-[768px]:bottom-28 max-[768px]:border max-[768px]:right-0 max-[768px]:left-0 " *ngIf="showLinks">
-          <a routerLink="/" routerLinkActive="active">Home</a>
-          <a routerLink="/portfolio" routerLinkActive="active">Portflolio</a>
-          <a routerLink="/blog" routerLinkActive="active">Blog</a>
-          <a routerLink="/about" routerLinkActive="active">About</a>
-          <a routerLink="/contact" routerLinkActive="active">Contact</a>
-          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <div
+          class="hidden max-[768px]:flex max-[768px]:flex-col max-[768px]:items-center max-[768px]:absolute max-[768px]:top-0 max-[768px]:bg-white max-[768px]:right-0 max-[768px]:left-0 max-[768px]:h-full"
+          [ngStyle]="{ 'background-color': mode === 'dark' ? '#0d1520' : '#fbfdff' }"
+          *ngIf="showLinks"
+          (click)="handleShowLinks()"
+        >
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            class="w-full flex justify-center p-6 mt-24 text-2xl hover:bg-zinc-500"
+            >Home</a
+          >
+          <a
+            routerLink="/portfolio"
+            routerLinkActive="active"
+            class="w-full flex justify-center p-6 text-2xl"
+            >Portflolio</a
+          >
+          <a
+            routerLink="/blog"
+            routerLinkActive="active"
+            class="w-full flex justify-center p-6 text-2xl"
+            >Blog</a
+          >
+          <a
+            routerLink="/about"
+            routerLinkActive="active"
+            class="w-full flex justify-center p-6 text-2xl"
+            >About</a
+          >
+          <a
+            routerLink="/contact"
+            routerLinkActive="active"
+            class="w-full flex justify-center p-6 text-2xl"
+            >Contact</a
+          >
+          <a
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            class="w-full flex justify-center p-6 text-2xl"
+            >Dashboard</a
+          >
         </div>
       </div>
     </nav>

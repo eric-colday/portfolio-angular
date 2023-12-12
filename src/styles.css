@@ -27,11 +27,11 @@ a {
 }
 
 .light {
-  background-color: white;
+  background-color: #fbfdff;
   color: #111;
 }
 
 .dark {
-  background-color: #111;
+  background-color: #0d1520;
   color: #bbb;
 }
