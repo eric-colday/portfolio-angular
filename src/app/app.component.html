@@ -1,9 +1,12 @@
 <main [ngClass]="mode">
-  <div
-    class="max-w-[1366px] min-h-[100vh] my-0 mx-auto py-0 px-[60px] max-[425px]:px-[30px]"
-  >
+  <div class="max-w-[1366px] my-0 mx-auto py-0 px-[60px] max-[425px]:px-[30px]">
     <!-- Navbar -->
-    <nav class="h-[100px] flex justify-between items-center">
+    <nav
+      class="max-w-[1366px] my-0 mx-auto py-0 px-[60px] h-[100px] fixed top-0 right-0 left-0 z-10 flex justify-between items-center"
+      [ngStyle]="{
+        'background-color': mode === 'dark' ? '#0d1520' : '#fbfdff'
+      }"
+    >
       <a routerLink="/" routerLinkActive="active" class="font-bold text-[22px]"
         >Nec
       </a>
@@ -20,9 +23,7 @@
           *ngIf="showLinks"
           (click)="handleShowLinks()"
         >
-          <mat-icon class="text-2xl cursor-pointer fixed z-50"
-            >close</mat-icon
-          >
+          <mat-icon class="text-2xl cursor-pointer fixed z-50">close</mat-icon>
         </div>
         <div
           class="w-[42px] h-[24px] border-y-[1.5px] border-y-[#53c28b70] rounded-[30px] flex justify-between items-center p-[2px] relative cursor-pointer"
@@ -37,17 +38,19 @@
         </div>
         <!-- Menu 1 -->
         <div class="flex items-center gap-6 max-[768px]:hidden">
-          <a routerLink="/" routerLinkActive="active">Home</a>
+          <a routerLink="/" routerLinkActive="active">Accueil</a>
           <a routerLink="/portfolio" routerLinkActive="active">Portflolio</a>
           <a routerLink="/blog" routerLinkActive="active">Blog</a>
-          <a routerLink="/about" routerLinkActive="active">About</a>
+          <a routerLink="/about" routerLinkActive="active">A propos</a>
           <a routerLink="/contact" routerLinkActive="active">Contact</a>
           <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
         </div>
         <!-- Menu 2 -->
         <div
           class="hidden max-[768px]:flex max-[768px]:flex-col max-[768px]:items-center max-[768px]:fixed max-[768px]:top-0 max-[768px]:bg-white max-[768px]:right-0 max-[768px]:left-0 max-[768px]:h-full"
-          [ngStyle]="{ 'background-color': mode === 'dark' ? '#0d1520' : '#fbfdff' }"
+          [ngStyle]="{
+            'background-color': mode === 'dark' ? '#0d1520' : '#fbfdff'
+          }"
           *ngIf="showLinks"
           (click)="handleShowLinks()"
         >
@@ -90,7 +93,18 @@
         </div>
       </div>
     </nav>
+    <!-- Content -->
+    <div class="pt-28"></div>
+    <router-outlet></router-outlet>
+    <!-- Footer -->
+    <div class="h-[50px] mt-11 text-[14px] flex justify-between items-center gap-2 max-[463px]:flex-col ">
+      <div class="">©2023 Lamamia. All rights reserved.</div>
+      <div class="flex items-center gap-[10px] mb-11 ">
+        <img  ngSrc="../assets/1.png" width="15" height="15" className="" alt="Facebook Account" />
+        <img ngSrc="assets/2.png" width="15" height="15" className="" alt="Lama Dev" />
+        <img ngSrc="assets/3.png" width="15" height="15" className="" alt="Lama Dev" />
+        <img ngSrc="assets/4.png" width="15" height="15" className="" alt="Lama Dev" />
+      </div>
+    </div>
   </div>
 </main>
-
-<router-outlet></router-outlet>

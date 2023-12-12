@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from './servvices/theme.service'; // Import du service de thème
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, CommonModule, RouterOutlet, MatIconModule],
+  imports: [RouterLink, CommonModule, RouterOutlet, MatIconModule, NgOptimizedImage ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

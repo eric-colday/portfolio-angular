@@ -35,3 +35,16 @@ a {
   background-color: #0d1520;
   color: #bbb;
 }
+
+@keyframes move {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+.animate-move {
+  animation: move 4s infinite ease alternate;
+}
