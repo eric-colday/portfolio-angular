@@ -20,7 +20,7 @@
           *ngIf="showLinks"
           (click)="handleShowLinks()"
         >
-          <mat-icon class="text-2xl cursor-pointer relative z-50"
+          <mat-icon class="text-2xl cursor-pointer fixed z-50"
             >close</mat-icon
           >
         </div>
@@ -46,7 +46,7 @@
         </div>
         <!-- Menu 2 -->
         <div
-          class="hidden max-[768px]:flex max-[768px]:flex-col max-[768px]:items-center max-[768px]:absolute max-[768px]:top-0 max-[768px]:bg-white max-[768px]:right-0 max-[768px]:left-0 max-[768px]:h-full"
+          class="hidden max-[768px]:flex max-[768px]:flex-col max-[768px]:items-center max-[768px]:fixed max-[768px]:top-0 max-[768px]:bg-white max-[768px]:right-0 max-[768px]:left-0 max-[768px]:h-full"
           [ngStyle]="{ 'background-color': mode === 'dark' ? '#0d1520' : '#fbfdff' }"
           *ngIf="showLinks"
           (click)="handleShowLinks()"
