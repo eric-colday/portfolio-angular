@@ -24,5 +24,6 @@ export class ThemeService {
   toggleTheme(): void {
     this.theme = this.theme === 'light' ? 'dark' : 'light';
     localStorage.setItem('theme', this.theme);
+    document.body.className = this.theme; // Ajoute la classe au body
   } ctor() { }
 }

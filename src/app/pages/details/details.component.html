@@ -1,0 +1,15 @@
+<div>
+    <div class="flex gap-[50px] mt-[50px] mb-[100px]">
+        <div class="flex justify-center items-center gap-[20px]">
+        <div>
+            <h2 class="text-[50px] font-bold">{{ item?.title }}</h2>
+            <p class="text-[20px]">{{ item?.desc }}</p>
+        </div>
+        <img
+            src="{{ item?.image }}"
+            alt="{{ item?.title }}"
+            class="object-cover w-[600px] h-[500px]"
+        />
+        </div>
+    </div>
+</div>

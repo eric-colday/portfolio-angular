@@ -1,0 +1,7 @@
+<main>
+  <h1 class="font-bold text-[70px]">Nos réalisations</h1>
+  <h2 class="text-[32px] font-bold text-[#53c28b] ">Websites</h2>
+  <section *ngFor="let item of dataList">
+    <app-web [item]="item"></app-web> 
+  </section>
+</main>

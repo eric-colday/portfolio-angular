@@ -29,11 +29,13 @@ a {
 .light {
   background-color: #fbfdff;
   color: #111;
+  transition: 1s all ease;
 }
 
 .dark {
   background-color: #0d1520;
   color: #bbb;
+  transition: 1s all ease;
 }
 
 @keyframes move {
